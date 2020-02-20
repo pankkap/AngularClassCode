@@ -1,0 +1,66 @@
+<div class="col-xs-8 col-xs-offset-2">
+  <div class="panel panel-primary" *ngFor="let student of students">
+    <div class="panel-heading">
+      <h3 class="panel-title text-center">{{ student.name }}</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row" class="vertical-align">
+        <div class="col-xs-4">
+          <img class="rounded" [src]="student.image" />
+        </div>
+        <div class="col-xs-8">
+          <div class="row">
+            <div class="col-xs-6">
+              RollNo
+            </div>
+            <div class="col-xs-6">: &nbsp;&nbsp;{{ student.rollno }}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              Gender
+            </div>
+            <div class="col-xs-6">: &nbsp;&nbsp;{{ student.gender }}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              Section
+            </div>
+            <div class="col-xs-6">: &nbsp;&nbsp;{{ student.section }}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              Date of Birth
+            </div>
+            <div class="col-xs-6">
+              : &nbsp;&nbsp;{{ student.dateOfBirth | date }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              Email
+            </div>
+            <div class="col-xs-6">: &nbsp;&nbsp;{{ student.email }}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              Mobile
+            </div>
+            <div class="col-xs-6">: &nbsp;&nbsp;{{ student.mobile }}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              Address
+            </div>
+            <div class="col-xs-6">: &nbsp;&nbsp;{{ student.address }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
