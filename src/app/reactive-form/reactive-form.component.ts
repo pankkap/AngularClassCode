@@ -20,11 +20,11 @@ export class ReactiveFormComponent implements OnInit {
   private initForm() {
     this.courseForm = new FormGroup({
       courseName: new FormControl(null, Validators.required),
-      courseDesc: new FormControl([
-        Validators.required,
-        Validators.minLength(100)
-      ]),
+      courseDesc: new FormControl(null),
       courseAmount: new FormControl(null)
     });
+  }
+  onClear() {
+    this.courseForm.reset();
   }
 }

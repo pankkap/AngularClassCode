@@ -10,7 +10,6 @@ export class TemplateFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-  courseForm: NgForm;
 
   onSubmit(form: NgForm) {
     console.log('Course Name is : ' + form.value.courseName);
@@ -18,10 +17,9 @@ export class TemplateFormComponent implements OnInit {
     console.log('Course Amount is : ' + form.value.courseAmount);
   }
 
-  onClear() {
-    // Now that we have access to the form via the 'ViewChild', we can access the form and clear it.
-    this.courseForm.reset();
-  }
+  // onClear() {
+  //   this.courseForm.reset();
+  // }
 
   onDelete() {}
 }
