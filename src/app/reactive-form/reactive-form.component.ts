@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -7,24 +7,22 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent implements OnInit {
-  courseForm: FormGroup;
+  courseForm: FormGroup;  // create a prperty of type formgroup
+
+
   constructor() {}
 
   ngOnInit() {
     this.initForm();
   }
   onSubmit() {
-    // Since we have  access to the FormGroup instance we can directly output the same
-    console.log(this.courseForm);
+      console.log(this.courseForm);
   }
   private initForm() {
     this.courseForm = new FormGroup({
-      courseName: new FormControl(null, Validators.required),
-      courseDesc: new FormControl(null),
-      courseAmount: new FormControl(null)
+      courseName: new FormControl(),
+      courseDesc: new FormControl(),
+      courseAmount: new FormControl()
     });
-  }
-  onClear() {
-    this.courseForm.reset();
   }
 }

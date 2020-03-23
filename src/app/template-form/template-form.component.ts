@@ -10,6 +10,9 @@ export class TemplateFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+  btnclick() {
+    alert('Thanks for Subscribing Me');
+  }
 
   onSubmit(form: NgForm) {
     console.log('Course Name is : ' + form.value.courseName);
