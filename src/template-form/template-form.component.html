@@ -1,0 +1,109 @@
+<div class="container">
+  <h3 class="text-center text-danger">Template Form</h3>
+
+  <br /><br />
+  <div class="row">
+    <div class="col-xs-12">
+      <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+        <div class="row">
+          <div class="col-sm-3 form-group">
+            <label for="courseName" class="control-label">Course Name</label>
+            <input
+              required
+              type="text"
+              id="courseName"
+              class="form-control"
+              name="courseName"
+              ngModel
+              #courseNamecontrol="ngModel"
+            />
+          </div>
+
+          <div class="col-sm-3 form-group">
+            <label for="courseDesc">Course Description</label>
+            <input
+              required
+              type="text"
+              id="courseDesc"
+              class="form-control"
+              name="courseDesc"
+              ngModel
+            />
+          </div>
+          <div class="col-sm-3 form-group">
+            <label for="courseAmount">Course Amount</label>
+            <input
+              required
+              type="number"
+              id="courseAmount"
+              class="form-control"
+              name="courseAmount"
+              ngModel
+            />
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn btn-primary" type="submit">
+              Add Data
+            </button>
+          </div>
+        </div>
+      </form>
+      <br />
+      <!-- {{ myform.value | json }} -->
+      <table
+        border="1"
+        style="border-collapse:collapse; font-family:Arial; table-layout: fixed"
+      >
+        <tr style="background-color:rgb(170, 120, 12); font-weight: bold">
+          <td colspan="3" style="padding:3px; white-space:nowrap; width:100%">
+            <h4>Field Validation</h4>
+          </td>
+        </tr>
+        <tr style="background-color:rgb(212, 149, 13); font-weight: bold">
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>touched : {{ courseNamecontrol.touched }}</div>
+            <div>untouched : {{ courseNamecontrol.untouched }}</div>
+          </td>
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>pristine : {{ courseNamecontrol.pristine }}</div>
+            <div>dirty : {{ courseNamecontrol.dirty }}</div>
+          </td>
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>valid : {{ courseNamecontrol.valid }}</div>
+            <div>invalid : {{ courseNamecontrol.invalid }}</div>
+          </td>
+        </tr>
+      </table>
+
+      <br /><br />
+      <table
+        border="1"
+        style="border-collapse:collapse; font-family:Arial; table-layout: fixed"
+      >
+        <tr style="background-color:rgb(170, 120, 12); font-weight: bold">
+          <td colspan="3" style="padding:3px; white-space:nowrap; width:100%">
+            <h4>FORM Validation</h4>
+          </td>
+        </tr>
+        <tr style="background-color:rgb(212, 149, 13); font-weight: bold">
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>touched : {{ myform.touched }}</div>
+            <div>untouched : {{ myform.untouched }}</div>
+          </td>
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>pristine : {{ myform.pristine }}</div>
+            <div>dirty : {{ myform.dirty }}</div>
+          </td>
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>valid : {{ myform.valid }}</div>
+            <div>invalid : {{ myform.invalid }}</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<br />
